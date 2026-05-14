@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>Warianty biura v3 – 4 salki, 16 biurek/zespół</title>
+<title>Warianty biura v4 – poprawna orientacja</title>
 <style>
   body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
   h1 { text-align: center; color: #1a1a2e; font-size: 1.3em; margin-bottom: 2px; }
@@ -28,7 +28,7 @@
 </head>
 <body>
 <h1>Warianty biura – 4 salki konferencyjne, 2 × 16 stanowisk</h1>
-<p class="subtitle">Przestrzeń: 18,505 × ~10,2 m &nbsp;|&nbsp; Biurko: 150 × 70 cm + fotel ~60 cm &nbsp;|&nbsp; 4 salki 2-os. w centrum (bez przejść)</p>
+<p class="subtitle">Przestrzeń: 18,505 × ~10,2 m &nbsp;|&nbsp; Biurko: 150 × 70 cm + fotel ~60 cm &nbsp;|&nbsp; Wejście od południa (dół), okna od północy (góra)</p>
 
 <div class="role-legend-global">
   <h3>Legenda ról — 16 biurek / zespół</h3>
@@ -41,351 +41,390 @@
     <div class="role-item"><div class="role-swatch" style="background:#66bb6a"></div>Salka konferencyjna 2-os.</div>
   </div>
   <p style="margin-top:10px; font-size:0.85em; color:#333;">
-    <strong>Rozmieszczenie:</strong>
-    🔴 <strong>PM</strong> blisko TM (raportowanie, planowanie) &nbsp;|&nbsp;
-    🔵 <strong>FK</strong> obok PM (budżet, finanse) &nbsp;|&nbsp;
-    🟢 <strong>OPS</strong> środek (most FK↔DEV) &nbsp;|&nbsp;
-    🟠 <strong>DEV</strong> w głębi (cisza, skupienie)
+    <strong>Logika rozmieszczenia (od wejścia w głąb):</strong><br>
+    🚪 Wejście (dół/S) → 🟣 <strong>TM</strong> (gabinet przy wejściu) → 🔴 <strong>PM</strong> (blisko TM) → 🔵 <strong>FK</strong> (obok PM, budżet) → 🟢 <strong>OPS</strong> (środek, most FK↔DEV) → 🟠 <strong>DEV</strong> (góra/N, przy oknach, cisza + światło)
   </p>
 </div>
 
 <div class="grid">
 
 <!-- ============================================== -->
-<!-- WARIANT A (dawny 2) – Hub konferencyjny -->
+<!-- WARIANT A – Hub konferencyjny -->
 <!-- ============================================== -->
 <div class="card">
-  <h2>Wariant A — Hub konferencyjny (dawny W2)</h2>
-  <p>TM w narożnikach. 4 salki 2-os. wypełniają cały pas centralny (bez przejść). PM przy TM.</p>
-  <svg viewBox="0 0 595 360" xmlns="http://www.w3.org/2000/svg">
+  <h2>Wariant A — Hub konferencyjny</h2>
+  <p>TM w dolnych narożnikach (przy wejściu). 4 salki 2-os. w pasie centralnym. DEV przy oknach (góra).</p>
+  <svg viewBox="0 0 595 400" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <pattern id="gridA" width="30" height="30" patternUnits="userSpaceOnUse">
         <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#e8e8e8" stroke-width="0.4"/>
       </pattern>
     </defs>
-    <rect x="20" y="20" width="555" height="310" fill="url(#gridA)" stroke="#333" stroke-width="3" rx="3"/>
 
-    <!-- Central hub zone – full height, no gaps -->
-    <rect x="247" y="20" width="100" height="310" fill="#e8f5e9" opacity="0.9"/>
-    <line x1="247" y1="20" x2="247" y2="330" stroke="#333" stroke-width="4"/>
-    <line x1="347" y1="20" x2="347" y2="330" stroke="#333" stroke-width="4"/>
+    <!-- Compass -->
+    <text x="14" y="200" text-anchor="middle" font-size="9" fill="#888" font-weight="bold">W</text>
+    <text x="582" y="200" text-anchor="middle" font-size="9" fill="#888" font-weight="bold">E</text>
+    <text x="297" y="15" text-anchor="middle" font-size="9" fill="#888" font-weight="bold">N ▲</text>
+    <text x="297" y="395" text-anchor="middle" font-size="9" fill="#888" font-weight="bold">S ▼</text>
 
-    <!-- 4 Conference rooms stacked, no passages -->
-    <rect x="252" y="24" width="90" height="72" fill="#66bb6a" opacity="0.85" rx="4"/>
-    <text x="297" y="50" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 1</text>
-    <text x="297" y="62" text-anchor="middle" font-size="8" fill="white">2 os.</text>
-    <rect x="268" y="72" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
-    <circle cx="260" cy="80" r="5" fill="white" opacity="0.35"/>
-    <circle cx="326" cy="80" r="5" fill="white" opacity="0.35"/>
+    <!-- Room outline -->
+    <rect x="20" y="25" width="555" height="340" fill="url(#gridA)" stroke="#333" stroke-width="3" rx="3"/>
 
-    <rect x="252" y="100" width="90" height="72" fill="#66bb6a" opacity="0.85" rx="4"/>
-    <text x="297" y="126" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 2</text>
-    <text x="297" y="138" text-anchor="middle" font-size="8" fill="white">2 os.</text>
-    <rect x="268" y="148" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
-    <circle cx="260" cy="156" r="5" fill="white" opacity="0.35"/>
-    <circle cx="326" cy="156" r="5" fill="white" opacity="0.35"/>
+    <!-- Windows (top/north wall) -->
+    <rect x="30" y="22" width="40" height="6" fill="#64b5f6" rx="2"/><rect x="80" y="22" width="40" height="6" fill="#64b5f6" rx="2"/>
+    <rect x="130" y="22" width="40" height="6" fill="#64b5f6" rx="2"/><rect x="180" y="22" width="40" height="6" fill="#64b5f6" rx="2"/>
+    <rect x="370" y="22" width="40" height="6" fill="#64b5f6" rx="2"/><rect x="420" y="22" width="40" height="6" fill="#64b5f6" rx="2"/>
+    <rect x="470" y="22" width="40" height="6" fill="#64b5f6" rx="2"/><rect x="520" y="22" width="40" height="6" fill="#64b5f6" rx="2"/>
+    <text x="120" y="19" text-anchor="middle" font-size="7" fill="#1976d2">okna</text>
+    <text x="470" y="19" text-anchor="middle" font-size="7" fill="#1976d2">okna</text>
 
-    <rect x="252" y="176" width="90" height="72" fill="#66bb6a" opacity="0.85" rx="4"/>
-    <text x="297" y="202" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 3</text>
-    <text x="297" y="214" text-anchor="middle" font-size="8" fill="white">2 os.</text>
-    <rect x="268" y="224" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
-    <circle cx="260" cy="232" r="5" fill="white" opacity="0.35"/>
-    <circle cx="326" cy="232" r="5" fill="white" opacity="0.35"/>
+    <!-- Entry door (bottom/south wall) -->
+    <rect x="265" y="362" width="65" height="6" fill="#8d6e63" rx="2"/>
+    <text x="297" y="380" text-anchor="middle" font-size="8" fill="#5d4037" font-weight="bold">🚪 WEJŚCIE</text>
 
-    <rect x="252" y="252" width="90" height="72" fill="#66bb6a" opacity="0.85" rx="4"/>
-    <text x="297" y="278" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 4</text>
-    <text x="297" y="290" text-anchor="middle" font-size="8" fill="white">2 os.</text>
-    <rect x="268" y="300" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
-    <circle cx="260" cy="308" r="5" fill="white" opacity="0.35"/>
-    <circle cx="326" cy="308" r="5" fill="white" opacity="0.35"/>
+    <!-- Central hub zone -->
+    <rect x="247" y="25" width="100" height="340" fill="#e8f5e9" opacity="0.9"/>
+    <line x1="247" y1="25" x2="247" y2="365" stroke="#333" stroke-width="4"/>
+    <line x1="347" y1="25" x2="347" y2="365" stroke="#333" stroke-width="4"/>
+
+    <!-- 4 Conference rooms stacked -->
+    <rect x="252" y="30" width="90" height="78" fill="#66bb6a" opacity="0.85" rx="4"/>
+    <text x="297" y="58" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 1</text>
+    <text x="297" y="70" text-anchor="middle" font-size="8" fill="white">2 os.</text>
+    <rect x="268" y="84" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
+    <circle cx="260" cy="92" r="5" fill="white" opacity="0.35"/>
+    <circle cx="326" cy="92" r="5" fill="white" opacity="0.35"/>
+
+    <rect x="252" y="112" width="90" height="78" fill="#66bb6a" opacity="0.85" rx="4"/>
+    <text x="297" y="140" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 2</text>
+    <text x="297" y="152" text-anchor="middle" font-size="8" fill="white">2 os.</text>
+    <rect x="268" y="166" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
+    <circle cx="260" cy="174" r="5" fill="white" opacity="0.35"/>
+    <circle cx="326" cy="174" r="5" fill="white" opacity="0.35"/>
+
+    <rect x="252" y="194" width="90" height="78" fill="#66bb6a" opacity="0.85" rx="4"/>
+    <text x="297" y="222" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 3</text>
+    <text x="297" y="234" text-anchor="middle" font-size="8" fill="white">2 os.</text>
+    <rect x="268" y="248" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
+    <circle cx="260" cy="256" r="5" fill="white" opacity="0.35"/>
+    <circle cx="326" cy="256" r="5" fill="white" opacity="0.35"/>
+
+    <rect x="252" y="276" width="90" height="78" fill="#66bb6a" opacity="0.85" rx="4"/>
+    <text x="297" y="304" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 4</text>
+    <text x="297" y="316" text-anchor="middle" font-size="8" fill="white">2 os.</text>
+    <rect x="268" y="330" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
+    <circle cx="260" cy="338" r="5" fill="white" opacity="0.35"/>
+    <circle cx="326" cy="338" r="5" fill="white" opacity="0.35"/>
 
     <!-- ===== TEAM 1 (left) ===== -->
-    <text x="133" y="340" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565c0" opacity="0.12">TEAM 1</text>
+    <text x="133" y="385" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565c0" opacity="0.12">TEAM 1</text>
 
-    <!-- TM1 room – top left -->
-    <rect x="20" y="20" width="78" height="68" fill="#7e57c2" opacity="0.85" rx="3"/>
-    <text x="59" y="46" text-anchor="middle" font-size="9" fill="white" font-weight="bold">TM 1</text>
-    <text x="59" y="58" text-anchor="middle" font-size="7" fill="white">gabinet</text>
-    <text x="59" y="69" text-anchor="middle" font-size="7" fill="white">~8 m²</text>
-    <rect x="27" y="73" width="36" height="10" fill="white" opacity="0.25" rx="1"/>
+    <!-- TM1 room – bottom left (near entrance) -->
+    <rect x="20" y="297" width="78" height="68" fill="#7e57c2" opacity="0.85" rx="3"/>
+    <text x="59" y="323" text-anchor="middle" font-size="9" fill="white" font-weight="bold">TM 1</text>
+    <text x="59" y="335" text-anchor="middle" font-size="7" fill="white">gabinet</text>
+    <text x="59" y="346" text-anchor="middle" font-size="7" fill="white">~8 m²</text>
 
-    <!-- PM1 desks (2) – next to TM1 -->
-    <rect x="108" y="28" width="45" height="21" fill="#e91e63" rx="2"/><text x="130" y="43" text-anchor="middle" font-size="7" fill="white">PM</text>
-    <rect x="108" y="49" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/><!-- chair -->
-    <rect x="108" y="65" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/><!-- chair -->
-    <rect x="108" y="81" width="45" height="21" fill="#e91e63" rx="2"/><text x="130" y="96" text-anchor="middle" font-size="7" fill="white">PM</text>
+    <!-- PM1 desks (2) – next to TM1 at bottom -->
+    <rect x="108" y="297" width="45" height="21" fill="#e91e63" rx="2"/><text x="130" y="312" text-anchor="middle" font-size="7" fill="white">PM</text>
+    <rect x="108" y="318" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
+    <rect x="108" y="334" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
+    <rect x="108" y="350" width="45" height="21" fill="#e91e63" rx="2"/><text x="130" y="365" text-anchor="middle" font-size="7" fill="white">PM</text>
 
-    <!-- FK1 (4 desks) – near PM -->
-    <rect x="163" y="28" width="45" height="21" fill="#1565c0" rx="2"/><text x="185" y="43" text-anchor="middle" font-size="7" fill="white">FK</text>
-    <rect x="163" y="49" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="163" y="65" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="163" y="81" width="45" height="21" fill="#1565c0" rx="2"/><text x="185" y="96" text-anchor="middle" font-size="7" fill="white">FK</text>
+    <!-- FK1 (4 desks) – above PM, still near entrance -->
+    <rect x="163" y="297" width="45" height="21" fill="#1565c0" rx="2"/><text x="185" y="312" text-anchor="middle" font-size="7" fill="white">FK</text>
+    <rect x="163" y="318" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="163" y="334" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="163" y="350" width="45" height="21" fill="#1565c0" rx="2"/><text x="185" y="365" text-anchor="middle" font-size="7" fill="white">FK</text>
 
-    <rect x="28" y="100" width="45" height="21" fill="#1565c0" rx="2"/><text x="50" y="115" text-anchor="middle" font-size="7" fill="white">FK</text>
-    <rect x="28" y="121" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="28" y="137" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="28" y="153" width="45" height="21" fill="#1565c0" rx="2"/><text x="50" y="168" text-anchor="middle" font-size="7" fill="white">FK</text>
+    <rect x="28" y="210" width="45" height="21" fill="#1565c0" rx="2"/><text x="50" y="225" text-anchor="middle" font-size="7" fill="white">FK</text>
+    <rect x="28" y="231" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="28" y="247" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="28" y="263" width="45" height="21" fill="#1565c0" rx="2"/><text x="50" y="278" text-anchor="middle" font-size="7" fill="white">FK</text>
 
     <!-- OPS1 (5 desks) – middle zone -->
-    <rect x="83" y="100" width="45" height="21" fill="#43a047" rx="2"/><text x="105" y="115" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="83" y="121" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="83" y="137" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="83" y="153" width="45" height="21" fill="#43a047" rx="2"/><text x="105" y="168" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="83" y="210" width="45" height="21" fill="#43a047" rx="2"/><text x="105" y="225" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="83" y="231" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="83" y="247" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="83" y="263" width="45" height="21" fill="#43a047" rx="2"/><text x="105" y="278" text-anchor="middle" font-size="7" fill="white">OPS</text>
 
-    <rect x="138" y="100" width="45" height="21" fill="#43a047" rx="2"/><text x="160" y="115" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="138" y="121" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="138" y="137" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="138" y="153" width="45" height="21" fill="#43a047" rx="2"/><text x="160" y="168" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="138" y="210" width="45" height="21" fill="#43a047" rx="2"/><text x="160" y="225" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="138" y="231" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="138" y="247" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="138" y="263" width="45" height="21" fill="#43a047" rx="2"/><text x="160" y="278" text-anchor="middle" font-size="7" fill="white">OPS</text>
 
-    <rect x="193" y="100" width="45" height="21" fill="#43a047" rx="2"/><text x="215" y="115" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="193" y="121" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="193" y="210" width="45" height="21" fill="#43a047" rx="2"/><text x="215" y="225" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="193" y="231" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
 
-    <!-- DEV1 (5 desks) – deep quiet zone -->
-    <rect x="28" y="190" width="45" height="21" fill="#f57c00" rx="2"/><text x="50" y="205" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="28" y="211" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="28" y="227" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="28" y="243" width="45" height="21" fill="#f57c00" rx="2"/><text x="50" y="258" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <!-- DEV1 (5 desks) – top/north = quiet zone + windows -->
+    <rect x="28" y="35" width="45" height="21" fill="#f57c00" rx="2"/><text x="50" y="50" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="28" y="56" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="28" y="72" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="28" y="88" width="45" height="21" fill="#f57c00" rx="2"/><text x="50" y="103" text-anchor="middle" font-size="7" fill="white">DEV</text>
 
-    <rect x="83" y="190" width="45" height="21" fill="#f57c00" rx="2"/><text x="105" y="205" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="83" y="211" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="83" y="227" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="83" y="243" width="45" height="21" fill="#f57c00" rx="2"/><text x="105" y="258" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="83" y="35" width="45" height="21" fill="#f57c00" rx="2"/><text x="105" y="50" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="83" y="56" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="83" y="72" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="83" y="88" width="45" height="21" fill="#f57c00" rx="2"/><text x="105" y="103" text-anchor="middle" font-size="7" fill="white">DEV</text>
 
-    <rect x="138" y="190" width="45" height="21" fill="#f57c00" rx="2"/><text x="160" y="205" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="138" y="211" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="138" y="35" width="45" height="21" fill="#f57c00" rx="2"/><text x="160" y="50" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="138" y="56" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
 
-    <!-- Zone labels left -->
-    <text x="220" y="55" text-anchor="middle" font-size="7" fill="#e91e63" opacity="0.7">PM</text>
-    <text x="220" y="135" text-anchor="middle" font-size="7" fill="#43a047" opacity="0.7">OPS</text>
-    <text x="220" y="230" text-anchor="middle" font-size="7" fill="#f57c00" opacity="0.7">DEV ♪</text>
+    <!-- Zone labels left side -->
+    <text x="220" y="65" text-anchor="middle" font-size="7" fill="#f57c00" opacity="0.7">DEV 🔇</text>
+    <text x="220" y="245" text-anchor="middle" font-size="7" fill="#43a047" opacity="0.7">OPS</text>
+    <text x="220" y="335" text-anchor="middle" font-size="7" fill="#e91e63" opacity="0.7">PM+FK</text>
 
     <!-- ===== TEAM 2 (right) ===== -->
-    <text x="465" y="340" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100" opacity="0.12">TEAM 2</text>
+    <text x="465" y="385" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100" opacity="0.12">TEAM 2</text>
 
-    <!-- TM2 room – top right -->
-    <rect x="497" y="20" width="78" height="68" fill="#7e57c2" opacity="0.85" rx="3"/>
-    <text x="536" y="46" text-anchor="middle" font-size="9" fill="white" font-weight="bold">TM 2</text>
-    <text x="536" y="58" text-anchor="middle" font-size="7" fill="white">gabinet</text>
-    <text x="536" y="69" text-anchor="middle" font-size="7" fill="white">~8 m²</text>
+    <!-- TM2 room – bottom right (near entrance) -->
+    <rect x="497" y="297" width="78" height="68" fill="#7e57c2" opacity="0.85" rx="3"/>
+    <text x="536" y="323" text-anchor="middle" font-size="9" fill="white" font-weight="bold">TM 2</text>
+    <text x="536" y="335" text-anchor="middle" font-size="7" fill="white">gabinet</text>
+    <text x="536" y="346" text-anchor="middle" font-size="7" fill="white">~8 m²</text>
 
-    <!-- PM2 desks (2) -->
-    <rect x="400" y="28" width="45" height="21" fill="#e91e63" rx="2"/><text x="422" y="43" text-anchor="middle" font-size="7" fill="white">PM</text>
-    <rect x="400" y="49" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
-    <rect x="400" y="65" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
-    <rect x="400" y="81" width="45" height="21" fill="#e91e63" rx="2"/><text x="422" y="96" text-anchor="middle" font-size="7" fill="white">PM</text>
+    <!-- PM2 desks (2) – next to TM2 at bottom -->
+    <rect x="441" y="297" width="45" height="21" fill="#e91e63" rx="2"/><text x="463" y="312" text-anchor="middle" font-size="7" fill="white">PM</text>
+    <rect x="441" y="318" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
+    <rect x="441" y="334" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
+    <rect x="441" y="350" width="45" height="21" fill="#e91e63" rx="2"/><text x="463" y="365" text-anchor="middle" font-size="7" fill="white">PM</text>
 
-    <!-- FK2 (4) -->
-    <rect x="455" y="100" width="45" height="21" fill="#1565c0" rx="2"/><text x="477" y="115" text-anchor="middle" font-size="7" fill="white">FK</text>
-    <rect x="455" y="121" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="455" y="137" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="455" y="153" width="45" height="21" fill="#1565c0" rx="2"/><text x="477" y="168" text-anchor="middle" font-size="7" fill="white">FK</text>
+    <!-- FK2 (4) – near PM2 -->
+    <rect x="386" y="297" width="45" height="21" fill="#1565c0" rx="2"/><text x="408" y="312" text-anchor="middle" font-size="7" fill="white">FK</text>
+    <rect x="386" y="318" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="386" y="334" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="386" y="350" width="45" height="21" fill="#1565c0" rx="2"/><text x="408" y="365" text-anchor="middle" font-size="7" fill="white">FK</text>
+
+    <rect x="510" y="210" width="45" height="21" fill="#1565c0" rx="2"/><text x="532" y="225" text-anchor="middle" font-size="7" fill="white">FK</text>
+    <rect x="510" y="231" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="510" y="247" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="510" y="263" width="45" height="21" fill="#1565c0" rx="2"/><text x="532" y="278" text-anchor="middle" font-size="7" fill="white">FK</text>
+
+    <!-- OPS2 (5) – middle -->
+    <rect x="355" y="210" width="45" height="21" fill="#43a047" rx="2"/><text x="377" y="225" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="355" y="231" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="355" y="247" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="355" y="263" width="45" height="21" fill="#43a047" rx="2"/><text x="377" y="278" text-anchor="middle" font-size="7" fill="white">OPS</text>
+
+    <rect x="410" y="210" width="45" height="21" fill="#43a047" rx="2"/><text x="432" y="225" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="410" y="231" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="410" y="247" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="410" y="263" width="45" height="21" fill="#43a047" rx="2"/><text x="432" y="278" text-anchor="middle" font-size="7" fill="white">OPS</text>
+
+    <rect x="465" y="210" width="45" height="21" fill="#43a047" rx="2"/><text x="487" y="225" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="465" y="231" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+
+    <!-- DEV2 (5) – top/north = quiet + windows -->
+    <rect x="355" y="35" width="45" height="21" fill="#f57c00" rx="2"/><text x="377" y="50" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="355" y="56" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="355" y="72" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="355" y="88" width="45" height="21" fill="#f57c00" rx="2"/><text x="377" y="103" text-anchor="middle" font-size="7" fill="white">DEV</text>
+
+    <rect x="410" y="35" width="45" height="21" fill="#f57c00" rx="2"/><text x="432" y="50" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="410" y="56" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="410" y="72" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="410" y="88" width="45" height="21" fill="#f57c00" rx="2"/><text x="432" y="103" text-anchor="middle" font-size="7" fill="white">DEV</text>
+
+    <rect x="465" y="35" width="45" height="21" fill="#f57c00" rx="2"/><text x="487" y="50" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="465" y="56" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+
+    <!-- Labels -->
+    <text x="297" y="390" text-anchor="middle" font-size="8" fill="#388e3c">← 4 salki 2-os. centralnie | TM przy wejściu →</text>
+  </svg>
+  <div class="pros-cons">
+    <span class="pro">✔ TM przy wejściu — łatwo dostępni dla gości i kierownictwa</span><br>
+    <span class="pro">✔ DEV przy oknach (N) — cisza + naturalne światło</span><br>
+    <span class="pro">✔ PM i FK blisko TM — szybkie decyzje budżetowe</span><br>
+    <span class="con">✘ Brak przejścia między zespołami (zamierzone)</span>
+  </div>
+</div>
+
+<!-- ============================================== -->
+<!-- WARIANT B – TM po przekątnej -->
+<!-- ============================================== -->
+<div class="card">
+  <h2>Wariant B — TM po przekątnej</h2>
+  <p>TM1 bottom-left (wejście), TM2 top-right (okna). Każdy TM nadzoruje swój zespół z innej perspektywy.</p>
+  <svg viewBox="0 0 595 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="gridB" width="30" height="30" patternUnits="userSpaceOnUse">
+        <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#e8e8e8" stroke-width="0.4"/>
+      </pattern>
+    </defs>
+
+    <!-- Compass -->
+    <text x="14" y="200" text-anchor="middle" font-size="9" fill="#888" font-weight="bold">W</text>
+    <text x="582" y="200" text-anchor="middle" font-size="9" fill="#888" font-weight="bold">E</text>
+    <text x="297" y="15" text-anchor="middle" font-size="9" fill="#888" font-weight="bold">N ▲</text>
+    <text x="297" y="395" text-anchor="middle" font-size="9" fill="#888" font-weight="bold">S ▼</text>
+
+    <!-- Room outline -->
+    <rect x="20" y="25" width="555" height="340" fill="url(#gridB)" stroke="#333" stroke-width="3" rx="3"/>
+
+    <!-- Windows (top/north) -->
+    <rect x="30" y="22" width="40" height="6" fill="#64b5f6" rx="2"/><rect x="80" y="22" width="40" height="6" fill="#64b5f6" rx="2"/>
+    <rect x="130" y="22" width="40" height="6" fill="#64b5f6" rx="2"/><rect x="180" y="22" width="40" height="6" fill="#64b5f6" rx="2"/>
+    <rect x="370" y="22" width="40" height="6" fill="#64b5f6" rx="2"/><rect x="420" y="22" width="40" height="6" fill="#64b5f6" rx="2"/>
+    <rect x="470" y="22" width="40" height="6" fill="#64b5f6" rx="2"/><rect x="520" y="22" width="40" height="6" fill="#64b5f6" rx="2"/>
+    <text x="120" y="19" text-anchor="middle" font-size="7" fill="#1976d2">okna</text>
+    <text x="470" y="19" text-anchor="middle" font-size="7" fill="#1976d2">okna</text>
+
+    <!-- Entry door (bottom/south) -->
+    <rect x="265" y="362" width="65" height="6" fill="#8d6e63" rx="2"/>
+    <text x="297" y="380" text-anchor="middle" font-size="8" fill="#5d4037" font-weight="bold">🚪 WEJŚCIE</text>
+
+    <!-- Central zone -->
+    <rect x="247" y="25" width="100" height="340" fill="#fff9c4" opacity="0.5"/>
+    <line x1="247" y1="25" x2="247" y2="365" stroke="#333" stroke-width="3"/>
+    <line x1="347" y1="25" x2="347" y2="365" stroke="#333" stroke-width="3"/>
+
+    <!-- 4 Conference rooms stacked -->
+    <rect x="252" y="30" width="90" height="78" fill="#66bb6a" opacity="0.85" rx="4"/>
+    <text x="297" y="58" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 1</text>
+    <text x="297" y="70" text-anchor="middle" font-size="8" fill="white">2 os.</text>
+    <rect x="268" y="84" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
+    <circle cx="260" cy="92" r="5" fill="white" opacity="0.35"/>
+    <circle cx="326" cy="92" r="5" fill="white" opacity="0.35"/>
+
+    <rect x="252" y="112" width="90" height="78" fill="#66bb6a" opacity="0.85" rx="4"/>
+    <text x="297" y="140" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 2</text>
+    <text x="297" y="152" text-anchor="middle" font-size="8" fill="white">2 os.</text>
+    <rect x="268" y="166" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
+    <circle cx="260" cy="174" r="5" fill="white" opacity="0.35"/>
+    <circle cx="326" cy="174" r="5" fill="white" opacity="0.35"/>
+
+    <rect x="252" y="194" width="90" height="78" fill="#66bb6a" opacity="0.85" rx="4"/>
+    <text x="297" y="222" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 3</text>
+    <text x="297" y="234" text-anchor="middle" font-size="8" fill="white">2 os.</text>
+    <rect x="268" y="248" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
+    <circle cx="260" cy="256" r="5" fill="white" opacity="0.35"/>
+    <circle cx="326" cy="256" r="5" fill="white" opacity="0.35"/>
+
+    <rect x="252" y="276" width="90" height="78" fill="#66bb6a" opacity="0.85" rx="4"/>
+    <text x="297" y="304" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 4</text>
+    <text x="297" y="316" text-anchor="middle" font-size="8" fill="white">2 os.</text>
+    <rect x="268" y="330" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
+    <circle cx="260" cy="338" r="5" fill="white" opacity="0.35"/>
+    <circle cx="326" cy="338" r="5" fill="white" opacity="0.35"/>
+
+    <!-- ===== TEAM 1 (left) ===== -->
+    <text x="133" y="385" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565c0" opacity="0.12">TEAM 1</text>
+
+    <!-- TM1 bottom-left (near entrance) -->
+    <rect x="20" y="297" width="78" height="68" fill="#7e57c2" opacity="0.85" rx="3"/>
+    <text x="59" y="323" text-anchor="middle" font-size="9" fill="white" font-weight="bold">TM 1</text>
+    <text x="59" y="335" text-anchor="middle" font-size="7" fill="white">gabinet</text>
+    <text x="59" y="346" text-anchor="middle" font-size="7" fill="white">~8 m²</text>
+
+    <!-- PM1 desks – next to TM1 at bottom -->
+    <rect x="108" y="297" width="45" height="21" fill="#e91e63" rx="2"/><text x="130" y="312" text-anchor="middle" font-size="7" fill="white">PM</text>
+    <rect x="108" y="318" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
+    <rect x="108" y="334" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
+    <rect x="108" y="350" width="45" height="21" fill="#e91e63" rx="2"/><text x="130" y="365" text-anchor="middle" font-size="7" fill="white">PM</text>
+
+    <!-- FK1 (4) near PM -->
+    <rect x="163" y="297" width="45" height="21" fill="#1565c0" rx="2"/><text x="185" y="312" text-anchor="middle" font-size="7" fill="white">FK</text>
+    <rect x="163" y="318" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="163" y="334" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="163" y="350" width="45" height="21" fill="#1565c0" rx="2"/><text x="185" y="365" text-anchor="middle" font-size="7" fill="white">FK</text>
+
+    <rect x="28" y="210" width="45" height="21" fill="#1565c0" rx="2"/><text x="50" y="225" text-anchor="middle" font-size="7" fill="white">FK</text>
+    <rect x="28" y="231" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="28" y="247" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="28" y="263" width="45" height="21" fill="#1565c0" rx="2"/><text x="50" y="278" text-anchor="middle" font-size="7" fill="white">FK</text>
+
+    <!-- OPS1 (5) middle -->
+    <rect x="83" y="140" width="45" height="21" fill="#43a047" rx="2"/><text x="105" y="155" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="83" y="161" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="83" y="177" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="83" y="193" width="45" height="21" fill="#43a047" rx="2"/><text x="105" y="208" text-anchor="middle" font-size="7" fill="white">OPS</text>
+
+    <rect x="138" y="140" width="45" height="21" fill="#43a047" rx="2"/><text x="160" y="155" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="138" y="161" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="138" y="177" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="138" y="193" width="45" height="21" fill="#43a047" rx="2"/><text x="160" y="208" text-anchor="middle" font-size="7" fill="white">OPS</text>
+
+    <rect x="193" y="140" width="45" height="21" fill="#43a047" rx="2"/><text x="215" y="155" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="193" y="161" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+
+    <!-- DEV1 (5) top = quiet + windows -->
+    <rect x="28" y="35" width="45" height="21" fill="#f57c00" rx="2"/><text x="50" y="50" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="28" y="56" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="28" y="72" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="28" y="88" width="45" height="21" fill="#f57c00" rx="2"/><text x="50" y="103" text-anchor="middle" font-size="7" fill="white">DEV</text>
+
+    <rect x="83" y="35" width="45" height="21" fill="#f57c00" rx="2"/><text x="105" y="50" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="83" y="56" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="83" y="72" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="83" y="88" width="45" height="21" fill="#f57c00" rx="2"/><text x="105" y="103" text-anchor="middle" font-size="7" fill="white">DEV</text>
+
+    <rect x="138" y="35" width="45" height="21" fill="#f57c00" rx="2"/><text x="160" y="50" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="138" y="56" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+
+    <!-- ===== TEAM 2 (right) ===== -->
+    <text x="465" y="385" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100" opacity="0.12">TEAM 2</text>
+
+    <!-- TM2 top-right (near windows – diagonal from TM1) -->
+    <rect x="497" y="25" width="78" height="68" fill="#7e57c2" opacity="0.85" rx="3"/>
+    <text x="536" y="51" text-anchor="middle" font-size="9" fill="white" font-weight="bold">TM 2</text>
+    <text x="536" y="63" text-anchor="middle" font-size="7" fill="white">gabinet</text>
+    <text x="536" y="74" text-anchor="middle" font-size="7" fill="white">~8 m²</text>
+
+    <!-- PM2 desks – next to TM2 at top -->
+    <rect x="441" y="33" width="45" height="21" fill="#e91e63" rx="2"/><text x="463" y="48" text-anchor="middle" font-size="7" fill="white">PM</text>
+    <rect x="441" y="54" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
+    <rect x="441" y="70" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
+    <rect x="441" y="86" width="45" height="21" fill="#e91e63" rx="2"/><text x="463" y="101" text-anchor="middle" font-size="7" fill="white">PM</text>
+
+    <!-- FK2 (4) near PM2 -->
+    <rect x="386" y="33" width="45" height="21" fill="#1565c0" rx="2"/><text x="408" y="48" text-anchor="middle" font-size="7" fill="white">FK</text>
+    <rect x="386" y="54" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="386" y="70" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
+    <rect x="386" y="86" width="45" height="21" fill="#1565c0" rx="2"/><text x="408" y="101" text-anchor="middle" font-size="7" fill="white">FK</text>
 
     <rect x="510" y="100" width="45" height="21" fill="#1565c0" rx="2"/><text x="532" y="115" text-anchor="middle" font-size="7" fill="white">FK</text>
     <rect x="510" y="121" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
     <rect x="510" y="137" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
     <rect x="510" y="153" width="45" height="21" fill="#1565c0" rx="2"/><text x="532" y="168" text-anchor="middle" font-size="7" fill="white">FK</text>
 
-    <!-- OPS2 (5) -->
-    <rect x="355" y="100" width="45" height="21" fill="#43a047" rx="2"/><text x="377" y="115" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="355" y="121" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="355" y="137" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="355" y="153" width="45" height="21" fill="#43a047" rx="2"/><text x="377" y="168" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <!-- OPS2 (5) middle -->
+    <rect x="355" y="140" width="45" height="21" fill="#43a047" rx="2"/><text x="377" y="155" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="355" y="161" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="355" y="177" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="355" y="193" width="45" height="21" fill="#43a047" rx="2"/><text x="377" y="208" text-anchor="middle" font-size="7" fill="white">OPS</text>
 
-    <rect x="410" y="100" width="45" height="21" fill="#43a047" rx="2"/><text x="432" y="115" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="410" y="121" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="410" y="137" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="410" y="153" width="45" height="21" fill="#43a047" rx="2"/><text x="432" y="168" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="410" y="140" width="45" height="21" fill="#43a047" rx="2"/><text x="432" y="155" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="410" y="161" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="410" y="177" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="410" y="193" width="45" height="21" fill="#43a047" rx="2"/><text x="432" y="208" text-anchor="middle" font-size="7" fill="white">OPS</text>
 
-    <rect x="355" y="28" width="45" height="21" fill="#43a047" rx="2"/><text x="377" y="43" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="355" y="49" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
+    <rect x="465" y="140" width="45" height="21" fill="#43a047" rx="2"/><text x="487" y="155" text-anchor="middle" font-size="7" fill="white">OPS</text>
+    <rect x="465" y="161" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
 
-    <!-- DEV2 (5) – deep -->
-    <rect x="355" y="190" width="45" height="21" fill="#f57c00" rx="2"/><text x="377" y="205" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="355" y="211" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="355" y="227" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="355" y="243" width="45" height="21" fill="#f57c00" rx="2"/><text x="377" y="258" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <!-- DEV2 (5) bottom-right = quiet for Team 2 (far from TM2 at top-right) -->
+    <rect x="355" y="275" width="45" height="21" fill="#f57c00" rx="2"/><text x="377" y="290" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="355" y="296" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="355" y="312" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="355" y="328" width="45" height="21" fill="#f57c00" rx="2"/><text x="377" y="343" text-anchor="middle" font-size="7" fill="white">DEV</text>
 
-    <rect x="410" y="190" width="45" height="21" fill="#f57c00" rx="2"/><text x="432" y="205" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="410" y="211" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="410" y="227" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="410" y="243" width="45" height="21" fill="#f57c00" rx="2"/><text x="432" y="258" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="410" y="275" width="45" height="21" fill="#f57c00" rx="2"/><text x="432" y="290" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="410" y="296" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="410" y="312" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="410" y="328" width="45" height="21" fill="#f57c00" rx="2"/><text x="432" y="343" text-anchor="middle" font-size="7" fill="white">DEV</text>
 
-    <rect x="465" y="190" width="45" height="21" fill="#f57c00" rx="2"/><text x="487" y="205" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="465" y="211" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
+    <rect x="465" y="275" width="45" height="21" fill="#f57c00" rx="2"/><text x="487" y="290" text-anchor="middle" font-size="7" fill="white">DEV</text>
+    <rect x="465" y="296" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
 
-    <!-- Count labels -->
-    <text x="297" y="350" text-anchor="middle" font-size="8" fill="#388e3c">← 4 salki 2-os. | ~3,3 m szerokości →</text>
+    <!-- Diagonal indicator -->
+    <line x1="59" y1="330" x2="536" y2="60" stroke="#7e57c2" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.3"/>
+    <text x="297" y="390" text-anchor="middle" font-size="8" fill="#795548">← TM1 (S-W) ↔ TM2 (N-E) po przekątnej →</text>
   </svg>
   <div class="pros-cons">
-    <span class="pro">✔ 4 salki konferencyjne, PM przy TM, DEV w ciszy, OPS jako most</span><br>
-    <span class="pro">✔ Salki dostępne z obu stron (Team 1 i Team 2)</span><br>
-    <span class="con">✘ Brak przejścia między zespołami (zamierzone)</span>
-  </div>
-</div>
-
-<!-- ============================================== -->
-<!-- WARIANT B (dawny 4) – PM w narożnikach -->
-<!-- ============================================== -->
-<div class="card">
-  <h2>Wariant B — TM w przeciwległych narożnikach (dawny W4)</h2>
-  <p>TM1 top-left, TM2 bottom-right. 4 salki centralnie. PM obok gabinetu TM.</p>
-  <svg viewBox="0 0 595 360" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <pattern id="gridB" width="30" height="30" patternUnits="userSpaceOnUse">
-        <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#e8e8e8" stroke-width="0.4"/>
-      </pattern>
-    </defs>
-    <rect x="20" y="20" width="555" height="310" fill="url(#gridB)" stroke="#333" stroke-width="3" rx="3"/>
-
-    <!-- Central zone -->
-    <rect x="247" y="20" width="100" height="310" fill="#fff9c4" opacity="0.5"/>
-    <line x1="247" y1="20" x2="247" y2="330" stroke="#333" stroke-width="3"/>
-    <line x1="347" y1="20" x2="347" y2="330" stroke="#333" stroke-width="3"/>
-
-    <!-- 4 Conference rooms stacked -->
-    <rect x="252" y="24" width="90" height="72" fill="#66bb6a" opacity="0.85" rx="4"/>
-    <text x="297" y="50" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 1</text>
-    <text x="297" y="62" text-anchor="middle" font-size="8" fill="white">2 os.</text>
-    <rect x="268" y="72" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
-    <circle cx="260" cy="80" r="5" fill="white" opacity="0.35"/>
-    <circle cx="326" cy="80" r="5" fill="white" opacity="0.35"/>
-
-    <rect x="252" y="100" width="90" height="72" fill="#66bb6a" opacity="0.85" rx="4"/>
-    <text x="297" y="126" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 2</text>
-    <text x="297" y="138" text-anchor="middle" font-size="8" fill="white">2 os.</text>
-    <rect x="268" y="148" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
-    <circle cx="260" cy="156" r="5" fill="white" opacity="0.35"/>
-    <circle cx="326" cy="156" r="5" fill="white" opacity="0.35"/>
-
-    <rect x="252" y="176" width="90" height="72" fill="#66bb6a" opacity="0.85" rx="4"/>
-    <text x="297" y="202" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 3</text>
-    <text x="297" y="214" text-anchor="middle" font-size="8" fill="white">2 os.</text>
-    <rect x="268" y="224" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
-    <circle cx="260" cy="232" r="5" fill="white" opacity="0.35"/>
-    <circle cx="326" cy="232" r="5" fill="white" opacity="0.35"/>
-
-    <rect x="252" y="252" width="90" height="72" fill="#66bb6a" opacity="0.85" rx="4"/>
-    <text x="297" y="278" text-anchor="middle" font-size="9" fill="white" font-weight="bold">Salka 4</text>
-    <text x="297" y="290" text-anchor="middle" font-size="8" fill="white">2 os.</text>
-    <rect x="268" y="300" width="50" height="16" fill="white" opacity="0.35" rx="2"/>
-    <circle cx="260" cy="308" r="5" fill="white" opacity="0.35"/>
-    <circle cx="326" cy="308" r="5" fill="white" opacity="0.35"/>
-
-    <!-- ===== TEAM 1 ===== -->
-    <text x="133" y="340" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565c0" opacity="0.12">TEAM 1</text>
-
-    <!-- TM1 top-left -->
-    <rect x="20" y="20" width="78" height="68" fill="#7e57c2" opacity="0.85" rx="3"/>
-    <text x="59" y="46" text-anchor="middle" font-size="9" fill="white" font-weight="bold">TM 1</text>
-    <text x="59" y="58" text-anchor="middle" font-size="7" fill="white">gabinet</text>
-    <text x="59" y="69" text-anchor="middle" font-size="7" fill="white">~8 m²</text>
-
-    <!-- PM1 desks – next to TM1 -->
-    <rect x="108" y="28" width="45" height="21" fill="#e91e63" rx="2"/><text x="130" y="43" text-anchor="middle" font-size="7" fill="white">PM</text>
-    <rect x="108" y="49" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
-    <rect x="108" y="65" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
-    <rect x="108" y="81" width="45" height="21" fill="#e91e63" rx="2"/><text x="130" y="96" text-anchor="middle" font-size="7" fill="white">PM</text>
-
-    <!-- FK1 (4) -->
-    <rect x="163" y="28" width="45" height="21" fill="#1565c0" rx="2"/><text x="185" y="43" text-anchor="middle" font-size="7" fill="white">FK</text>
-    <rect x="163" y="49" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="163" y="65" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="163" y="81" width="45" height="21" fill="#1565c0" rx="2"/><text x="185" y="96" text-anchor="middle" font-size="7" fill="white">FK</text>
-
-    <rect x="28" y="100" width="45" height="21" fill="#1565c0" rx="2"/><text x="50" y="115" text-anchor="middle" font-size="7" fill="white">FK</text>
-    <rect x="28" y="121" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="28" y="137" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="28" y="153" width="45" height="21" fill="#1565c0" rx="2"/><text x="50" y="168" text-anchor="middle" font-size="7" fill="white">FK</text>
-
-    <!-- OPS1 (5) -->
-    <rect x="83" y="100" width="45" height="21" fill="#43a047" rx="2"/><text x="105" y="115" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="83" y="121" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="83" y="137" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="83" y="153" width="45" height="21" fill="#43a047" rx="2"/><text x="105" y="168" text-anchor="middle" font-size="7" fill="white">OPS</text>
-
-    <rect x="138" y="100" width="45" height="21" fill="#43a047" rx="2"/><text x="160" y="115" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="138" y="121" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="138" y="137" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="138" y="153" width="45" height="21" fill="#43a047" rx="2"/><text x="160" y="168" text-anchor="middle" font-size="7" fill="white">OPS</text>
-
-    <rect x="193" y="100" width="45" height="21" fill="#43a047" rx="2"/><text x="215" y="115" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="193" y="121" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-
-    <!-- DEV1 (5) deep -->
-    <rect x="28" y="190" width="45" height="21" fill="#f57c00" rx="2"/><text x="50" y="205" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="28" y="211" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="28" y="227" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="28" y="243" width="45" height="21" fill="#f57c00" rx="2"/><text x="50" y="258" text-anchor="middle" font-size="7" fill="white">DEV</text>
-
-    <rect x="83" y="190" width="45" height="21" fill="#f57c00" rx="2"/><text x="105" y="205" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="83" y="211" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="83" y="227" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="83" y="243" width="45" height="21" fill="#f57c00" rx="2"/><text x="105" y="258" text-anchor="middle" font-size="7" fill="white">DEV</text>
-
-    <rect x="138" y="190" width="45" height="21" fill="#f57c00" rx="2"/><text x="160" y="205" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="138" y="211" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-
-    <!-- ===== TEAM 2 ===== -->
-    <text x="465" y="340" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100" opacity="0.12">TEAM 2</text>
-
-    <!-- TM2 bottom-right -->
-    <rect x="497" y="262" width="78" height="68" fill="#7e57c2" opacity="0.85" rx="3"/>
-    <text x="536" y="288" text-anchor="middle" font-size="9" fill="white" font-weight="bold">TM 2</text>
-    <text x="536" y="300" text-anchor="middle" font-size="7" fill="white">gabinet</text>
-    <text x="536" y="311" text-anchor="middle" font-size="7" fill="white">~8 m²</text>
-
-    <!-- PM2 desks – next to TM2 -->
-    <rect x="400" y="270" width="45" height="21" fill="#e91e63" rx="2"/><text x="422" y="285" text-anchor="middle" font-size="7" fill="white">PM</text>
-    <rect x="400" y="249" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
-    <rect x="400" y="233" width="45" height="16" fill="#f48fb1" rx="1" opacity="0.45"/>
-    <rect x="400" y="212" width="45" height="21" fill="#e91e63" rx="2"/><text x="422" y="227" text-anchor="middle" font-size="7" fill="white">PM</text>
-
-    <!-- FK2 (4) near PM2 -->
-    <rect x="455" y="195" width="45" height="21" fill="#1565c0" rx="2"/><text x="477" y="210" text-anchor="middle" font-size="7" fill="white">FK</text>
-    <rect x="455" y="174" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="455" y="158" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="455" y="137" width="45" height="21" fill="#1565c0" rx="2"/><text x="477" y="152" text-anchor="middle" font-size="7" fill="white">FK</text>
-
-    <rect x="510" y="195" width="45" height="21" fill="#1565c0" rx="2"/><text x="532" y="210" text-anchor="middle" font-size="7" fill="white">FK</text>
-    <rect x="510" y="174" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="510" y="158" width="45" height="16" fill="#90caf9" rx="1" opacity="0.4"/>
-    <rect x="510" y="137" width="45" height="21" fill="#1565c0" rx="2"/><text x="532" y="152" text-anchor="middle" font-size="7" fill="white">FK</text>
-
-    <!-- OPS2 (5) -->
-    <rect x="355" y="100" width="45" height="21" fill="#43a047" rx="2"/><text x="377" y="115" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="355" y="121" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="355" y="137" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="355" y="153" width="45" height="21" fill="#43a047" rx="2"/><text x="377" y="168" text-anchor="middle" font-size="7" fill="white">OPS</text>
-
-    <rect x="410" y="100" width="45" height="21" fill="#43a047" rx="2"/><text x="432" y="115" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="410" y="121" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="410" y="137" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-    <rect x="410" y="153" width="45" height="21" fill="#43a047" rx="2"/><text x="432" y="168" text-anchor="middle" font-size="7" fill="white">OPS</text>
-
-    <rect x="465" y="100" width="45" height="21" fill="#43a047" rx="2"/><text x="487" y="115" text-anchor="middle" font-size="7" fill="white">OPS</text>
-    <rect x="465" y="121" width="45" height="16" fill="#a5d6a7" rx="1" opacity="0.4"/>
-
-    <!-- DEV2 (5) top-right = deep/quiet for Team 2 -->
-    <rect x="355" y="28" width="45" height="21" fill="#f57c00" rx="2"/><text x="377" y="43" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="355" y="49" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="355" y="65" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="355" y="81" width="45" height="21" fill="#f57c00" rx="2"/><text x="377" y="96" text-anchor="middle" font-size="7" fill="white">DEV</text>
-
-    <rect x="410" y="28" width="45" height="21" fill="#f57c00" rx="2"/><text x="432" y="43" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="410" y="49" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="410" y="65" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-    <rect x="410" y="81" width="45" height="21" fill="#f57c00" rx="2"/><text x="432" y="96" text-anchor="middle" font-size="7" fill="white">DEV</text>
-
-    <rect x="465" y="28" width="45" height="21" fill="#f57c00" rx="2"/><text x="487" y="43" text-anchor="middle" font-size="7" fill="white">DEV</text>
-    <rect x="465" y="49" width="45" height="16" fill="#ffcc80" rx="1" opacity="0.4"/>
-
-    <!-- Count label -->
-    <text x="297" y="350" text-anchor="middle" font-size="8" fill="#795548">← 4 salki 2-os. | TM w narożnikach po przekątnej →</text>
-  </svg>
-  <div class="pros-cons">
-    <span class="pro">✔ 4 salki, TM po przekątnej = max widoczność, DEV w ciszy (najdalej od TM)</span><br>
-    <span class="pro">✔ Team 2 to lustrzane odbicie Team 1 (obrócone 180°)</span><br>
-    <span class="con">✘ TM2 daleko od wejścia głównego</span>
+    <span class="pro">✔ TM1 przy wejściu (dostępność), TM2 przy oknach (prestiż, spokój)</span><br>
+    <span class="pro">✔ Każdy TM nadzoruje swój zespół od własnego narożnika</span><br>
+    <span class="pro">✔ Team 2 DEV blisko wejścia — kompromis: daleko od TM2 (cisza od szefa)</span><br>
+    <span class="con">✘ DEV Team 2 przy wejściu — trochę głośniej niż przy oknach</span>
   </div>
 </div>
 
@@ -399,13 +438,14 @@
       <tr><th></th><th>Wariant A (Hub)</th><th>Wariant B (TM po przekątnej)</th></tr>
     </thead>
     <tbody>
+      <tr><td><strong>Orientacja</strong></td><td colspan="2">Wejście: dół (S) &nbsp;|&nbsp; Okna: góra (N) &nbsp;|&nbsp; Ściany: W i E</td></tr>
       <tr><td><strong>Salki konf.</strong></td><td>4 × 2-os.</td><td>4 × 2-os.</td></tr>
-      <tr><td><strong>Gabinet TM</strong></td><td>2 × ~8 m² (oba top)</td><td>2 × ~8 m² (po przekątnej)</td></tr>
-      <tr><td><strong>Biurka PM</strong></td><td>2 × 2 (obok TM)</td><td>2 × 2 (obok TM)</td></tr>
+      <tr><td><strong>Gabinet TM</strong></td><td>2 × ~8 m² (oba na dole przy wejściu)</td><td>2 × ~8 m² (po przekątnej: SW i NE)</td></tr>
+      <tr><td><strong>DEV (cisza)</strong></td><td>✅ oba zespoły przy oknach (N)</td><td>⚠️ Team 1 przy oknach, Team 2 przy wejściu</td></tr>
+      <tr><td><strong>PM blisko TM</strong></td><td>✅ tak</td><td>✅ tak</td></tr>
       <tr><td><strong>Biurka łącznie</strong></td><td>2 × 16 = 32</td><td>2 × 16 = 32</td></tr>
       <tr><td><strong>Przejście między teamami</strong></td><td>Brak (celowe)</td><td>Brak (celowe)</td></tr>
-      <tr><td><strong>DEV w ciszy</strong></td><td>✅ głębia obu stref</td><td>✅ najdalej od TM</td></tr>
-      <tr><td><strong>Różnica kluczowa</strong></td><td>Oba TM blisko wejścia</td><td>TM2 z tyłu — lepszy nadzór Team 2</td></tr>
+      <tr class="rec"><td><strong>Rekomendacja</strong></td><td><strong>✅ Lepszy dla DEV</strong> — oba zespoły mają ciszę + okna</td><td>Lepszy nadzór TM z 2 perspektyw</td></tr>
     </tbody>
   </table>
 </div>
@@ -419,7 +459,8 @@
   🟣 TM × 1 (gabinet ~8 m²) &nbsp;|&nbsp;
   <strong>Σ = 16 biurek + 1 gabinet</strong><br><br>
   📐 Stanowisko: 150×70 cm biurko + ~60 cm fotel. Para face-to-face: 150 × ~200 cm<br>
-  🟩 Salka 2-os.: ~3 × 2,5 m = ~7,5 m² (stół + 2 krzesła)
+  🟩 Salka 2-os.: ~3 × 2,5 m = ~7,5 m² (stół + 2 krzesła)<br>
+  🧭 Orientacja: N=okna (góra) | S=wejście (dół) | W,E=ściany
 </div>
 
 </body>
