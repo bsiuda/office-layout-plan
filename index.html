@@ -28,7 +28,7 @@
 </head>
 <body>
 <h1>Warianty biura – 4 salki konferencyjne, 2 × 16 stanowisk</h1>
-<p class="subtitle">Przestrzeń: 18,505 × 9,058 m (~168 m²) &nbsp;|&nbsp; Biurko: 150 × 70 cm + fotel ~60 cm &nbsp;|&nbsp; Wejście: południe (dół) &nbsp;|&nbsp; Okna: północ (góra)</p>
+<p class="subtitle">Przestrzeń: 18,505 × 9,058 m (~168 m²) &nbsp;|&nbsp; Biurko: 150 × 70 cm + fotel ~60 cm &nbsp;|&nbsp; Korytarz: południe (dół, otwarte) &nbsp;|&nbsp; Okna: północ (góra)</p>
 
 <div class="role-legend-global">
   <h3>Legenda ról — 16 biurek / zespół</h3>
@@ -42,7 +42,7 @@
   </div>
   <p style="margin-top:10px; font-size:0.85em; color:#333;">
     <strong>Logika (od wejścia w głąb):</strong>
-    🚪 Wejście (S) → 🟣 TM → 🔴 PM → 🔵 FK → 🟢 OPS → 🟠 DEV (N, okna, cisza)
+    🚪 Korytarz (S) → 🟣 TM → 🔴 PM → 🔵 FK → 🟢 OPS → 🟠 DEV (N, okna, cisza)
   </p>
 </div>
 
@@ -67,8 +67,11 @@
     <text x="616" y="173" text-anchor="middle" font-size="7" fill="#999" font-weight="bold">E</text>
     <text x="310" y="14" text-anchor="middle" font-size="7" fill="#999" font-weight="bold">N ▲</text>
 
-    <!-- Room outline: 576 × 282 -->
-    <rect x="22" y="30" width="576" height="282" fill="url(#gA)" stroke="#333" stroke-width="3" rx="3"/>
+    <!-- Room outline: 576 × 282, open bottom (corridor) -->
+    <rect x="22" y="30" width="576" height="282" fill="url(#gA)" stroke="none" rx="3"/>
+    <line x1="22" y1="30" x2="598" y2="30" stroke="#333" stroke-width="3"/><!-- N wall -->
+    <line x1="22" y1="30" x2="22" y2="312" stroke="#333" stroke-width="3"/><!-- W wall -->
+    <line x1="598" y1="30" x2="598" y2="312" stroke="#333" stroke-width="3"/><!-- E wall -->
     <!-- Room dimensions -->
     <line x1="22" y1="322" x2="598" y2="322" stroke="#999" stroke-width="0.5"/>
     <line x1="22" y1="319" x2="22" y2="325" stroke="#999" stroke-width="0.5"/>
@@ -93,11 +96,10 @@
     <text x="140" y="22" text-anchor="middle" font-size="7" fill="#1976d2">okna ☀</text>
     <text x="480" y="22" text-anchor="middle" font-size="7" fill="#1976d2">okna ☀</text>
 
-    <!-- Entry door (bottom/south) -->
-    <rect x="22" y="312" width="247" height="3" fill="#333"/>
-    <rect x="352" y="312" width="246" height="3" fill="#333"/>
-    <rect x="269" y="309" width="82" height="6" fill="none" stroke="#8d6e63" stroke-width="2" stroke-dasharray="4,2" rx="2"/>
-    <text x="310" y="335" text-anchor="middle" font-size="9" fill="#5d4037" font-weight="bold">🚪 WEJŚCIE (S)</text>
+    <!-- Corridor (bottom/south) — open, no wall -->
+    <rect x="22" y="312" width="576" height="28" fill="#efebe9" opacity="0.6" rx="2"/>
+    <line x1="22" y1="312" x2="598" y2="312" stroke="#8d6e63" stroke-width="1" stroke-dasharray="6,3"/>
+    <text x="310" y="330" text-anchor="middle" font-size="8" fill="#5d4037" font-weight="bold">↔ KORYTARZ (S) — otwarta przestrzeń</text>
 
     <!-- Central hub zone -->
     <rect x="259" y="30" width="102" height="282" fill="#e8f5e9" opacity="0.85"/>
@@ -258,7 +260,7 @@
     <rect x="476" y="292" width="44" height="19" fill="#e91e63" rx="2"/><text x="498" y="305" text-anchor="middle" font-size="6.5" fill="white">PM</text>
   </svg>
   <div class="pros-cons">
-    <span class="pro">✔ TM przy wejściu — łatwo dostępni dla gości</span><br>
+    <span class="pro">✔ TM przy korytarzu — łatwo dostępni dla gości</span><br>
     <span class="pro">✔ DEV przy oknach (N) — cisza + naturalne światło</span><br>
     <span class="pro">✔ PM i FK blisko TM — szybkie decyzje</span><br>
     <span class="con">✘ Brak przejścia między zespołami (zamierzone)</span>
@@ -283,8 +285,11 @@
     <text x="616" y="173" text-anchor="middle" font-size="7" fill="#999" font-weight="bold">E</text>
     <text x="310" y="14" text-anchor="middle" font-size="7" fill="#999" font-weight="bold">N ▲</text>
 
-    <!-- Room outline -->
-    <rect x="22" y="30" width="576" height="282" fill="url(#gB)" stroke="#333" stroke-width="3" rx="3"/>
+    <!-- Room outline: open bottom (corridor) -->
+    <rect x="22" y="30" width="576" height="282" fill="url(#gB)" stroke="none" rx="3"/>
+    <line x1="22" y1="30" x2="598" y2="30" stroke="#333" stroke-width="3"/><!-- N wall -->
+    <line x1="22" y1="30" x2="22" y2="312" stroke="#333" stroke-width="3"/><!-- W wall -->
+    <line x1="598" y1="30" x2="598" y2="312" stroke="#333" stroke-width="3"/><!-- E wall -->
     <!-- Room dimensions -->
     <line x1="22" y1="322" x2="598" y2="322" stroke="#999" stroke-width="0.5"/>
     <line x1="22" y1="319" x2="22" y2="325" stroke="#999" stroke-width="0.5"/>
@@ -309,11 +314,10 @@
     <text x="140" y="22" text-anchor="middle" font-size="7" fill="#1976d2">okna ☀</text>
     <text x="480" y="22" text-anchor="middle" font-size="7" fill="#1976d2">okna ☀</text>
 
-    <!-- Entry door (bottom/south) -->
-    <rect x="22" y="312" width="247" height="3" fill="#333"/>
-    <rect x="352" y="312" width="246" height="3" fill="#333"/>
-    <rect x="269" y="309" width="82" height="6" fill="none" stroke="#8d6e63" stroke-width="2" stroke-dasharray="4,2" rx="2"/>
-    <text x="310" y="335" text-anchor="middle" font-size="9" fill="#5d4037" font-weight="bold">🚪 WEJŚCIE (S)</text>
+    <!-- Corridor (bottom/south) — open, no wall -->
+    <rect x="22" y="312" width="576" height="28" fill="#efebe9" opacity="0.6" rx="2"/>
+    <line x1="22" y1="312" x2="598" y2="312" stroke="#8d6e63" stroke-width="1" stroke-dasharray="6,3"/>
+    <text x="310" y="330" text-anchor="middle" font-size="8" fill="#5d4037" font-weight="bold">↔ KORYTARZ (S) — otwarta przestrzeń</text>
 
     <!-- Central zone -->
     <rect x="259" y="30" width="102" height="282" fill="#fff9c4" opacity="0.5"/>
@@ -469,10 +473,10 @@
     <line x1="58" y1="275" x2="562" y2="65" stroke="#7e57c2" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.3"/>
   </svg>
   <div class="pros-cons">
-    <span class="pro">✔ TM1 przy wejściu, TM2 przy oknach — dwie perspektywy</span><br>
+    <span class="pro">✔ TM1 przy korytarzu, TM2 przy oknach — dwie perspektywy</span><br>
     <span class="pro">✔ Team 2: odwrócona sekwencja TM→PM→FK→OPS→DEV od góry</span><br>
-    <span class="con">✘ DEV Team 2 przy wejściu (S) — głośniej</span><br>
-    <span class="con">✘ TM2 daleko od wejścia głównego</span>
+    <span class="con">✘ DEV Team 2 przy korytarzu (S) — głośniej</span><br>
+    <span class="con">✘ TM2 daleko od korytarza</span>
   </div>
 </div>
 
@@ -486,10 +490,10 @@
       <tr><th></th><th>Wariant A (Hub)</th><th>Wariant B (TM po przekątnej)</th></tr>
     </thead>
     <tbody>
-      <tr><td><strong>Wymiary</strong></td><td colspan="2">18,505 × 9,058 m (~168 m²) &nbsp;|&nbsp; Wejście: S &nbsp;|&nbsp; Okna: N &nbsp;|&nbsp; Ściany: W, E</td></tr>
+      <tr><td><strong>Wymiary</strong></td><td colspan="2">18,505 × 9,058 m (~168 m²) &nbsp;|&nbsp; Korytarz: S (otwarty) &nbsp;|&nbsp; Okna: N &nbsp;|&nbsp; Ściany: W, E</td></tr>
       <tr><td><strong>Salki konf.</strong></td><td>4 × 2-os.</td><td>4 × 2-os.</td></tr>
-      <tr><td><strong>Gabinet TM</strong></td><td>2 × ~8 m² (oba na dole przy wejściu)</td><td>2 × ~8 m² (przekątna: SW i NE)</td></tr>
-      <tr><td><strong>DEV (cisza)</strong></td><td>✅ oba zespoły przy oknach (N)</td><td>⚠️ T1 przy oknach, T2 przy wejściu</td></tr>
+      <tr><td><strong>Gabinet TM</strong></td><td>2 × ~8 m² (oba na dole przy korytarzu)</td><td>2 × ~8 m² (przekątna: SW i NE)</td></tr>
+      <tr><td><strong>DEV (cisza)</strong></td><td>✅ oba zespoły przy oknach (N)</td><td>⚠️ T1 przy oknach, T2 przy korytarzu</td></tr>
       <tr><td><strong>PM blisko TM</strong></td><td>✅ tak</td><td>✅ tak</td></tr>
       <tr><td><strong>Biurka łącznie</strong></td><td>2 × 16 = 32</td><td>2 × 16 = 32</td></tr>
       <tr><td><strong>Przejście</strong></td><td>Brak (celowe)</td><td>Brak (celowe)</td></tr>
@@ -502,7 +506,7 @@
   <strong>Stanowiska na zespół:</strong>
   🔴 PM × 2 &nbsp;|&nbsp; 🔵 FK × 4 &nbsp;|&nbsp; 🟢 OPS × 5 &nbsp;|&nbsp; 🟠 DEV × 5 &nbsp;|&nbsp; 🟣 TM × 1 (gabinet) &nbsp;|&nbsp; <strong>Σ = 16 + 1</strong><br>
   📐 Biurko: 150×70 cm + fotel ~60 cm &nbsp;|&nbsp; Para face-to-face: 150 × ~200 cm<br>
-  🟩 Salka 2-os.: ~3 × 2,5 m &nbsp;|&nbsp; 🧭 N=okna | S=wejście | W,E=ściany
+  🟩 Salka 2-os.: ~3 × 2,5 m &nbsp;|&nbsp; 🧭 N=okna | S=korytarz (otwarty) | W,E=ściany
 </div>
 
 </body>
